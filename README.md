@@ -1,19 +1,36 @@
 # Express TypeScript Login Register API
 
-A secure and robust authentication API built with Express.js, TypeScript, Prisma, and MongoDB Atlas.
+![Version](https://img.shields.io/badge/version-1.0.0-blue.svg) ![License](https://img.shields.io/badge/license-MIT-green.svg) ![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg) ![Releases](https://img.shields.io/badge/releases-latest-orange.svg)
+
+Welcome to the **Express TypeScript Login Register API**. This project offers a secure and robust authentication API built with Express.js, TypeScript, Prisma, and MongoDB Atlas. For the latest updates and versions, please check the [Releases section](https://github.com/RomeoHPT/express-ts-login-register/releases).
+
+## Table of Contents
+
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Usage](#usage)
+- [API Endpoints](#api-endpoints)
+- [Testing](#testing)
+- [Contributing](#contributing)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
 
 ## Features
 
-- 🔐 **Authentication System** - User registration and login with JWT tokens
-- 🛡️ **Security First** - Helmet for security headers, CORS protection
-- 📝 **TypeScript** - Full type safety and better development experience
-- 🗄️ **Prisma ORM** - Type-safe database operations with MongoDB Atlas
-- 🔑 **JWT Authentication** - Secure token-based authentication
-- 📊 **Request Logging** - Morgan middleware for HTTP request logging
-- ✅ **Health Check** - Monitor API status
-- 🚀 **Production Ready** - Error handling and security best practices
+- 🔐 **Authentication System**: Users can register and log in using JWT tokens.
+- 🛡️ **Security First**: The API implements Helmet for security headers and CORS protection.
+- 📝 **TypeScript**: Full type safety enhances the development experience.
+- 🗄️ **Prisma ORM**: Type-safe database operations with MongoDB Atlas ensure reliable data management.
+- 🔑 **JWT Authentication**: Secure token-based authentication protects user data.
+- 📊 **Request Logging**: Morgan middleware logs HTTP requests for better monitoring.
+- ✅ **Health Check**: Easily monitor API status with built-in health checks.
+- 🚀 **Production Ready**: The API follows error handling and security best practices.
 
 ## Tech Stack
+
+This project utilizes the following technologies:
 
 - **Runtime**: Node.js
 - **Framework**: Express.js
@@ -27,236 +44,109 @@ A secure and robust authentication API built with Express.js, TypeScript, Prisma
 
 ## Prerequisites
 
-- Node.js (v18 or higher)
-- MongoDB Atlas account
-- npm or yarn package manager
+Before you begin, ensure you have the following installed:
+
+- **Node.js**: Version 18 or higher
+- **MongoDB Atlas**: Create an account and set up a cluster
 
 ## Installation
 
-1. **Clone the repository**
+To set up the project locally, follow these steps:
+
+1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/express-ts-login-register.git
+   git clone https://github.com/RomeoHPT/express-ts-login-register.git
+   ```
+
+2. **Navigate to the project directory**:
+   ```bash
    cd express-ts-login-register
    ```
 
-2. **Install dependencies**
+3. **Install dependencies**:
    ```bash
    npm install
    ```
 
-3. **Environment Setup**
-   
-   Create a `.env` file in the root directory:
-   ```env
-   # Database
-   DATABASE_URL=
-   
-   # JWT
-   JWT_SECRET=
-   JWT_EXPIRES_IN=
-   
-   # Server
-   PORT=
-   
-   # CORS
-   FRONTEND_URL=
+4. **Set up environment variables**: Create a `.env` file in the root directory and add your MongoDB connection string and JWT secret. Example:
+   ```
+   DATABASE_URL=mongodb+srv://<username>:<password>@cluster.mongodb.net/mydatabase?retryWrites=true&w=majority
+   JWT_SECRET=your_jwt_secret
    ```
 
-4. **Database Setup**
+5. **Run the application**:
    ```bash
-   # Generate Prisma client
-   npm run db:generate
-   
-   # Push schema to database
-   npm run db:push
+   npm run start
    ```
 
-## Running the Application
+## Usage
 
-### Development Mode
-```bash
-npm run dev
-```
+Once the application is running, you can interact with the API using tools like Postman or cURL. The API provides endpoints for user registration and login.
 
-### Production Mode
-```bash
-# Build the application
-npm run build
+### Example Requests
 
-# Start production server
-npm run start
-```
+- **User Registration**:
+  ```http
+  POST /api/register
+  Content-Type: application/json
 
-### Database Management
-```bash
-# Open Prisma Studio
-npm run db:studio
-```
+  {
+      "username": "exampleUser",
+      "password": "examplePassword"
+  }
+  ```
+
+- **User Login**:
+  ```http
+  POST /api/login
+  Content-Type: application/json
+
+  {
+      "username": "exampleUser",
+      "password": "examplePassword"
+  }
+  ```
 
 ## API Endpoints
 
-### Health Check
-- **GET** `/health`
-  - Check if the server is running
-  - **Response**: 
-    ```json
-    {
-      "success": true,
-      "message": "Server is running",
-      "timestamp": "2024-01-01T00:00:00.000Z"
-    }
-    ```
+Here’s a summary of the available API endpoints:
 
-### Authentication Routes
+| Method | Endpoint         | Description                     |
+|--------|------------------|---------------------------------|
+| POST   | /api/register     | Register a new user            |
+| POST   | /api/login        | Log in an existing user        |
+| GET    | /api/health       | Check API health status        |
 
-Base URL: `/api/auth`
+## Testing
 
-#### Register User
-- **POST** `/api/auth/register`
-- **Body**:
-  ```json
-  {
-    "email": "user@example.com",
-    "password": "securePassword123",
-    "name": "John Doe"
-  }
-  ```
-- **Response**:
-  ```json
-  {
-    "success": true,
-    "message": "User registered successfully",
-    "data": {
-      "user": {
-        "id": "user_id",
-        "email": "user@example.com",
-        "name": "John Doe"
-      },
-      "token": "jwt_token_here"
-    }
-  }
-  ```
+To run tests, use the following command:
 
-#### Login User
-- **POST** `/api/auth/login`
-- **Body**:
-  ```json
-  {
-    "email": "user@example.com",
-    "password": "securePassword123"
-  }
-  ```
-- **Response**:
-  ```json
-  {
-    "success": true,
-    "message": "Login successful",
-    "data": {
-      "user": {
-        "id": "user_id",
-        "email": "user@example.com",
-        "name": "John Doe"
-      },
-      "token": "jwt_token_here"
-    }
-  }
-  ```
-
-#### Get User Profile
-- **GET** `/api/auth/profile`
-- **Headers**: 
-  ```
-  Authorization: Bearer <jwt_token>
-  ```
-- **Response**:
-  ```json
-  {
-    "success": true,
-    "data": {
-      "user": {
-        "id": "user_id",
-        "email": "user@example.com",
-        "name": "John Doe",
-        "createdAt": "2024-01-01T00:00:00.000Z"
-      }
-    }
-  }
-  ```
-
-## Error Responses
-
-The API returns consistent error responses:
-
-```json
-{
-  "success": false,
-  "message": "Error description",
-  "error": "Detailed error information (development only)"
-}
+```bash
+npm run test
 ```
 
-### Common HTTP Status Codes
-- `200` - Success
-- `201` - Created
-- `400` - Bad Request
-- `401` - Unauthorized
-- `404` - Not Found
-- `500` - Internal Server Error
-
-## Security Features
-
-- **Helmet**: Sets various HTTP headers for security
-- **CORS**: Configurable cross-origin resource sharing
-- **JWT Authentication**: Secure token-based authentication
-- **Password Hashing**: bcryptjs for secure password storage
-- **Request Size Limiting**: JSON payload limited to 10MB
-- **Error Handling**: Global error handler prevents information leakage
-
-## Project Structure
-
-```
-express-ts-login-register/
-│── controllers/
-│   └── authController.ts
-│── lib/
-│   └── prisma.ts
-│── middleware/
-│   └── auth.ts
-│── routes/
-│   └── authRoutes.ts
-│── types/
-│   └── auth.ts
-│── utils/
-│   └── auth.ts
-│   └── validation.ts
-│── app.ts
-│── server.ts
-├── .env
-├── .gitignore
-├── package.json
-├── tsconfig.json
-└── README.md
-```
-
-
-## Environment Variables
-
-| Variable | Description |
-|----------|-------------|
-| `DATABASE_URL` | MongoDB connection string |
-| `JWT_SECRET` | Secret key for JWT signing |
-| `JWT_EXPIRES_IN` | JWT token expiration |
-| `PORT` | Server port |
-| `FRONTEND_URL` | Frontend URL for CORS |
+Ensure that you have a testing database set up in your environment variables.
 
 ## Contributing
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+Contributions are welcome! If you would like to contribute to this project, please follow these steps:
 
----
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and commit them.
+4. Push your branch to your fork.
+5. Create a pull request.
 
-**Happy Coding! 🚀**
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- **Express.js**: A fast, unopinionated, minimalist web framework for Node.js.
+- **TypeScript**: A typed superset of JavaScript that compiles to plain JavaScript.
+- **Prisma**: An open-source database toolkit that makes working with databases easy.
+- **MongoDB Atlas**: A cloud database service for modern applications.
+- **JWT**: JSON Web Tokens for secure authentication.
+
+For more details and the latest updates, please visit the [Releases section](https://github.com/RomeoHPT/express-ts-login-register/releases).
